@@ -1,10 +1,13 @@
 import React, { useContext } from 'react'
 import styles from './Display.module.css'
-// import { DataContext } from '../Context/DataContext'
-
+import {DataContext} from '../Context/DataContext'
 export const Display = () => {
-    // const {data}=useContext(DataContext)
+    const {value,setValue}=useContext(DataContext)
+
   return (
-    <div>Data</div>
+    <div className='display'> 
+    <p className={styles.display}>value: {value}</p>
+
+    </div>
   )
 }
