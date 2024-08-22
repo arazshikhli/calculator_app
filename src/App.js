@@ -1,11 +1,17 @@
-import logo from './logo.svg';
+
 import './App.css';
+import { Buttons } from './components/Buttons/Buttons';
+// import { DataProvider } from './components/Context/DataContext';
+import { Display } from './components/Display/Display';
 
 function App() {
   return (
-    <div className="App">
-
+    <div>
+        <Display/>
+        <Buttons/>
     </div>
+
+
   );
 }
 
