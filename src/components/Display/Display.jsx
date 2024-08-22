@@ -1,12 +1,25 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import styles from './Display.module.css'
-import {DataContext} from '../Context/DataContext'
+import {DataContext,ResultContext} from '../Context/DataContext'
 export const Display = () => {
-    const {value,setValue}=useContext(DataContext)
+    const {dataValue}=useContext(DataContext);
+    const {result,setResult}=useContext(ResultContext)
+
+    useEffect(()=>{
+      setResult(result)
+    },[])
 
   return (
-    <div className='display'> 
-    <p className={styles.display}>value: {value}</p>
+    <div className={styles.display}> 
+    
+    <p>Result: {result?<span>{result}</span>:''}</p>
+    
+    <p className={styles.display}>value: {dataValue}</p>
+    {/* {
+      result?<div><p>{dataValue}</p>
+      <p>{result}</p>
+      </div>:<div><p>{''}</p><p>{dataValue}</p></div>
+    } */}
 
     </div>
   )

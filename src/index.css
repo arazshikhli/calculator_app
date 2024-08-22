@@ -12,3 +12,10 @@ code {
     monospace;
 }
 /*  */
+
+:root{
+  --primary-size:24px;
+  --btn-border:5px;
+  --number-btn-color:#353A4E;
+  --display-result-size:32px;
+}

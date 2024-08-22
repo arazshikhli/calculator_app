@@ -1,3 +1,4 @@
 .display{
-    color: aliceblue;
+  color: white;
+  font-size: var(--display-result-size);
 }

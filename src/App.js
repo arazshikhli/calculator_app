@@ -1,17 +1,11 @@
 
-import './App.css';
-import { Buttons } from './components/Buttons/Buttons';
-import DataProvider from './components/Context/DataContext';
-import { Display } from './components/Display/Display';
+import { Layout } from './components/Layout/Layout';
 
 function App() {
   return (
-    <DataProvider>
-          <div className='content'>
-        <Display/>
-        <Buttons/>
-    </div>
-    </DataProvider>
+<>
+<Layout/>
+</>
 
   );
 }
