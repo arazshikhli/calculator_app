@@ -1,4 +1,6 @@
 .display{
   color: white;
   font-size: var(--display-result-size);
+  width: 100%;
+  
 }

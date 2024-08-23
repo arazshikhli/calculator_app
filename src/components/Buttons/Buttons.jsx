@@ -57,12 +57,17 @@ const {result,setResult}=useContext(ResultContext)
       setResult('Error');
     }
   };
+   const handleClearLastSymbol=()=>{
+    const newData=dataValue.split('');
+    newData.pop()
+    setDataValue(newData.join(''))
+   }
 
     return <div className={styles.buttonsLayout}>
        <ul className={styles.firstElements}>
        <button onClick={()=>handleClick('')} className={styles.operationButtons}>C</button>
        <button onClick={()=>handleClick('')} className={styles.operationButtons}>CE</button>
-       <button onClick={()=>handleClick('')} className={styles.operationButtons}>C</button>
+       <button onClick={()=>handleClearLastSymbol()} className={styles.operationButtons}>C</button>
        </ul>
         <ul className={styles.secondElements}>
             <button onClick={()=>handleClick('7')} className={styles.numberButtons}>7</button>
