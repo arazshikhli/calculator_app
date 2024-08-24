@@ -1,20 +1,17 @@
 import React, { useContext, useEffect } from 'react'
 import styles from './Display.module.css'
-import {DataContext,ResultContext} from '../Context/DataContext'
-export const Display = () => {
-    const {dataValue}=useContext(DataContext);
-    const {result,setResult}=useContext(ResultContext)
+// import {DataContext,ResultContext} from '../Context/DataContext'
+export const Display = ({value,result}) => {
 
-    useEffect(()=>{
-      setResult(result)
-    },[])
 
+useEffect(()=>{
+  console.log('value, ',value);
+  
+})
   return (
     <div className={styles.display}> 
-    
-    <p>Result: {result?<span>{result}</span>:''}</p>
-    <p className={styles.display}>value: {dataValue}</p>
 
+  <p style={{color:'black'}}>{value}</p>
     </div>
   )
 }
