@@ -4,16 +4,15 @@ import styles from './Buttons.module.css'
 import { DataContext,ResultContext} from '../Context/DataContext'
 
 
+
 export const Buttons=()=>{
 
-const {dataValue,setDataValue}=useContext(DataContext)
-const {result,setResult}=useContext(ResultContext)
-// const includeSymbol=
-// const [includeSmbl,setIncludeSmbl]=useState(dataValue.includes('+'|'-'|'/'|'*'))
+  const {dataValue,setDataValue}=useContext(DataContext)
+  const {result,setResult}=useContext(ResultContext)
 
-// useEffect(()=>{
 
-// },[includeSmbl])
+
+
   const handleClick = (value) => {
     if (result !== null) {
       setDataValue(value);
@@ -22,6 +21,7 @@ const {result,setResult}=useContext(ResultContext)
       setDataValue(dataValue + value);
     }
   };
+  
   const calculateResult = () => {
     try {
       const operands = dataValue.split(/([+\-*/])/);

@@ -13,13 +13,7 @@ export const Display = () => {
     <div className={styles.display}> 
     
     <p>Result: {result?<span>{result}</span>:''}</p>
-    
     <p className={styles.display}>value: {dataValue}</p>
-    {/* {
-      result?<div><p>{dataValue}</p>
-      <p>{result}</p>
-      </div>:<div><p>{''}</p><p>{dataValue}</p></div>
-    } */}
 
     </div>
   )
