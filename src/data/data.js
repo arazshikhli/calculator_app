@@ -1,0 +1,59 @@
+export const calcSymbols=[{
+    index:0,value:'1',type:'number',operation:'standard'
+},
+{
+    index:1,value:'2',type:'number',operation:'standard'
+},
+{
+    index:2,value:'3',type:'number',operation:'standard'
+},
+{
+    index:3,value:'4',type:'number',operation:'standard'
+},
+{
+    index:4,value:'5',type:'number',operation:'standard'
+},
+{
+    index:5,value:'6',type:'number',operation:'standard'
+},
+{
+    index:6,value:'7',type:'number',operation:'standard'
+},
+{
+    index:7,value:'8',type:'number',operation:'standard'
+},
+{
+    index:8,value:'9',type:'number',operation:'standard'
+},
+,
+{
+    index:9,value:'0',type:'number',operation:'standard'
+},
+,
+{
+    index:10,value:'+',type:'symbol',operation:'standard'
+},
+,
+{
+    index:11,value:'-',type:'symbol',operation:'standard'
+},
+,
+{
+    index:12,value:'/',type:'symbol',operation:'standard'
+},
+,
+{
+    index:13,value:'=',type:'symbol',operation:'result'
+},
+
+{
+    index:14,value:'%',type:'symbol',operation:'standard'
+},
+{
+    index:15,value:'c',type:'symbol',operation:'clear'
+},
+{
+    index:16,value:'del',type:'symbol',operation:'delLast'
+},
+
+]

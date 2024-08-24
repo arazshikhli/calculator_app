@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Display } from '../Display/Display';
 import { Buttons } from '../Buttons/Buttons';
-import { type } from '@testing-library/user-event/dist/type';
-
+import{ calcSymbols} from '../../data/data'
 export const LogicPage = () => {
     const [value,setValue]=useState('');
     const [result,setResult]=useState(null)
@@ -11,65 +10,7 @@ export const LogicPage = () => {
         setValue(value)
     },[value])
 
-    const numberButtons=[{
-        index:0,value:'1',type:'number',operation:'standard'
-    },
-    {
-        index:1,value:'2',type:'number',operation:'standard'
-    },
-    {
-        index:2,value:'3',type:'number',operation:'standard'
-    },
-    {
-        index:3,value:'4',type:'number',operation:'standard'
-    },
-    {
-        index:4,value:'5',type:'number',operation:'standard'
-    },
-    {
-        index:5,value:'6',type:'number',operation:'standard'
-    },
-    {
-        index:6,value:'7',type:'number',operation:'standard'
-    },
-    {
-        index:7,value:'8',type:'number',operation:'standard'
-    },
-    {
-        index:8,value:'9',type:'number',operation:'standard'
-    },
-    ,
-    {
-        index:9,value:'0',type:'number',operation:'standard'
-    },
-    ,
-    {
-        index:10,value:'+',type:'symbol',operation:'standard'
-    },
-    ,
-    {
-        index:11,value:'-',type:'symbol',operation:'standard'
-    },
-    ,
-    {
-        index:12,value:'/',type:'symbol',operation:'standard'
-    },
-    ,
-    {
-        index:13,value:'=',type:'symbol',operation:'result'
-    },
-    
-    {
-        index:14,value:'%',type:'symbol',operation:'standard'
-    },
-    {
-        index:15,value:'c',type:'symbol',operation:'clear'
-    },
-    {
-        index:16,value:'del',type:'symbol',operation:'delLast'
-    },
-    
-]
+
 
 
 
@@ -137,7 +78,7 @@ export const LogicPage = () => {
         value={value} 
         setValue={setValue}
         result={setResult}
-        numberButtons={numberButtons}
+        calcSymbols={calcSymbols}
         handleClick={handleClick}
         calculateResult={calculateResult}
         handleClearLastSymbol={handleClearLastSymbol}

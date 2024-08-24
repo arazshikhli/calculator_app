@@ -6,7 +6,7 @@ import { ButtonItem } from './ButtonItem/ButtonItem'
 
 
 
-export const Buttons=({  value,setValue,numberButtons,  handleClick,  calculateResult,  handleClearLastSymbol}
+export const Buttons=({  value,setValue,calcSymbols,  handleClick,  calculateResult,  handleClearLastSymbol}
 )=>{
 
 
@@ -27,7 +27,7 @@ export const Buttons=({  value,setValue,numberButtons,  handleClick,  calculateR
 
       <ul>
         {
-          numberButtons.map(function(number){
+          calcSymbols.map(function(number){
             return<ButtonItem key={number.index}
             setValue={setValue}
              value={number.value}
