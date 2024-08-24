@@ -1,0 +1,18 @@
+button{
+    border:none;
+    border-radius: 10px;
+    font-size: var( --primary-size);
+    transition: all 0.7s;
+    cursor:pointer;
+}
+button:hover{
+    background-color: #363535;
+}
+.numberBtn{
+background-color: var(--btn--bg-color);
+color:var(--nmb-btn-color)
+}
+.symbolBtn{
+    background-color: var(--btn--bg-color);
+    color: var(--sym-btn-color);
+}

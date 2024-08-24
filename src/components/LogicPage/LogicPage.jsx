@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { Display } from '../Display/Display';
 import { Buttons } from '../Buttons/Buttons';
-import{ calcSymbols} from '../../data/data'
+import{ calcSymbols} from '../../data/data';
+import styles from './LoginPage.module.css'
+
 export const LogicPage = () => {
     const [value,setValue]=useState('');
     const [result,setResult]=useState(null)
@@ -10,15 +12,9 @@ export const LogicPage = () => {
         setValue(value)
     },[value])
 
-
-
-
-
   const handleClick = (val) => {
-    console.log('handleClick: ')
-    console.log('HandleClick result: ',result)
     if (result !== null) {
-        if(val.value!=undefined){
+        if(val.value!==undefined){
             setValue(val.value);
         }
 
@@ -33,7 +29,6 @@ export const LogicPage = () => {
     try {
       const operands = value.split(/([+\-*/])/);
       let calcResult = parseFloat(operands[0]);
-      // console.log(dataValue.includes('+'|'-'|'/'|'*'))
       for (let i = 1; i < operands.length; i += 2) {
         const operator = operands[i];
         const nextOperand = parseFloat(operands[i + 1]);
@@ -65,14 +60,14 @@ export const LogicPage = () => {
     }
   };
    const handleClearLastSymbol=()=>{
-    console.log('clearLastResult')
     const newData=value.split('');
     newData.pop()
     setValue(newData.join(''))
    }
 
   return (
-    <div className='layout'>
+    <div className={styles.content}>
+        <div className={styles.calculator}>
         <Display value={value} result={result}/>
         <Buttons 
         value={value} 
@@ -81,9 +76,9 @@ export const LogicPage = () => {
         calcSymbols={calcSymbols}
         handleClick={handleClick}
         calculateResult={calculateResult}
-        handleClearLastSymbol={handleClearLastSymbol}
-
-        />
+        handleClearLastSymbol={handleClearLastSymbol}/>
+        </div>
+      
     </div>
   )
 }

@@ -16,6 +16,9 @@ code {
 :root{
   --primary-size:24px;
   --btn-border:5px;
-  --number-btn-color:#353A4E;
-  --display-result-size:32px;
+  --calc-bg:#000000;
+  --btn--bg-color:#242424;
+  --nmb-btn-color:white;
+  --sym-btn-color:#ED8114;
+  --display-result-size:30px;
 }

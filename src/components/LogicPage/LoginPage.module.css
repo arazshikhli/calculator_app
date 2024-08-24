@@ -1,0 +1,21 @@
+.content{
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('../../assets/light.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator{
+    width: 400px;
+    height: 700px;
+    background-color: var(--calc-bg);
+    border-radius: 15px;
+    display: grid;
+    grid-template-rows: 300px 400px;
+    }

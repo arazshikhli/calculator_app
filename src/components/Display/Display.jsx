@@ -1,6 +1,6 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import styles from './Display.module.css'
-// import {DataContext,ResultContext} from '../Context/DataContext'
+
 export const Display = ({value,result}) => {
 
 
@@ -11,7 +11,7 @@ useEffect(()=>{
   return (
     <div className={styles.display}> 
 
-  <p style={{color:'black'}}>{value}</p>
+  <p>{value}</p>
     </div>
   )
 }
