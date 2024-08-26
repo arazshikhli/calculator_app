@@ -39,10 +39,16 @@ export const LogicPage = () => {
     try {
       const operands = value.split(/([+\-*/%])/);
 
+      const percent=operands[operands.length-2];
+
+      if(percent==='%'){
+        operands[operands.length-3]*=0.1
+        
+      }
       let calcResult = parseFloat(operands[0]);
+      
       for (let i = 1; i < operands.length; i += 2) {
         const operator = operands[i];
-
         const nextOperand = parseFloat(operands[i + 1]);
 
         switch (operator) {
@@ -58,23 +64,20 @@ export const LogicPage = () => {
           case '/':
             calcResult /= nextOperand;
             break;
-            case'%':{
-                // console.log('operands[i]: ',operands[i-1])
-               if(operands[i-1]==='+'||operands[i-1]==='-'||operands[i-1]==='/'||operands[i-1]==='*') {
-                // console.log('percent')
-                break;
-               }
-            }
+         
 
           default:
             break;
         }
-      
-        
+      }
+      for(let i=0;i<operands.length;i++){
+        if(operands[i]==='%'){
+
+        }
       }
 
 
-    const valueArray=value.split('');
+    const valueArray=inputValue.split('');
     const lastSymbol=valueArray[valueArray.length-1];
     const prevLastSymbol=valueArray[valueArray.length-2];
       const isPrevLast=prevLastSymbol==='+'||prevLastSymbol==='-'||prevLastSymbol==='/'||prevLastSymbol==='*'||prevLastSymbol==='%';
@@ -86,12 +89,12 @@ export const LogicPage = () => {
           console.log('value',valueArray)
           valueArray.push(lastSymbol);
           console.log(valueArray)
-          setValue(valueArray.join(''))
-        
+          setInputValue(valueArray.join(''))
       }
 
+      
+      
       setResult(calcResult);
-    
 
   
     } catch (error) {

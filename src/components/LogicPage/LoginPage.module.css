@@ -9,6 +9,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+
 }
 .divider{
     display: flex;
@@ -23,4 +24,5 @@
     display: grid;
     grid-template-rows: 300px 400px;
     flex: 1;
+    
     }

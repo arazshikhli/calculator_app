@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './ButtonItem.module.css'
 
-export const ButtonItem = ({value, setValue,valueType,type,operation,
+export const ButtonItem = ({value, setValue,valueType,type,
     handleClearLastSymbol,
     setResult,
     handleClick,
@@ -26,7 +26,6 @@ export const ButtonItem = ({value, setValue,valueType,type,operation,
                {     
                 handleClearLastSymbol()}
                 break;
-            
             default:
                 break;
           }
