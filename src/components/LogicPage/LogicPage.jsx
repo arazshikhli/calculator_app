@@ -12,21 +12,15 @@ export const LogicPage = () => {
    
 
     useEffect(()=>{
-//  console.log(resultHistory);
       calculateResult()
 
  
     },[value,result,inputValue])
-      // // Обработчик для изменения значения input через пользовательский ввод
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
+
   };
 
-  // // Обработчик для изменения значения input через нажатие кнопки
-  // const handleButtonClick = (newValue) => {
-  //   setInputValue(newValue);
-  // };
- 
   const handleClick = (val) => {
     setInputValue(inputValue+val)
     setValue(value + val);
@@ -45,6 +39,7 @@ export const LogicPage = () => {
         operands[operands.length-3]*=0.1
         
       }
+
       let calcResult = parseFloat(operands[0]);
       
       for (let i = 1; i < operands.length; i += 2) {
@@ -82,20 +77,12 @@ export const LogicPage = () => {
     const prevLastSymbol=valueArray[valueArray.length-2];
       const isPrevLast=prevLastSymbol==='+'||prevLastSymbol==='-'||prevLastSymbol==='/'||prevLastSymbol==='*'||prevLastSymbol==='%';
       const isLastSymb=lastSymbol==='+'||lastSymbol==='-'||lastSymbol==='/'||lastSymbol==='*'||lastSymbol==='%';
-      console.log('isPrevLast: ', isPrevLast);
-      console.log('islast: ', isLastSymb)
       if(isLastSymb&&isPrevLast){ 
           valueArray.splice(-2);
-          console.log('value',valueArray)
           valueArray.push(lastSymbol);
-          console.log(valueArray)
           setInputValue(valueArray.join(''))
       }
-
-      
-      
       setResult(calcResult);
-
   
     } catch (error) {
         console.log(error.message);
@@ -107,7 +94,6 @@ export const LogicPage = () => {
     const newData=value.split('');
     newData.pop()  
     setInputValue(newData.join(''))
-    console.log(inputValue);
     setValue(newData.join(''))
    }
 

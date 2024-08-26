@@ -16,13 +16,13 @@
 }
 .dataInput{
   border: none;
-  min-height: 40px;
+  min-height: 60px;
   width: 100%;
-  border-radius: 5px;
+  border-radius: 10px;
   font-size: var(--display-result-size);
   color: var(--sym-btn-color);
   display: flex;
   align-content: flex-end;
-  background-color: var(--calc-bg);
+  background-color: var(--btn--bg-color);
   text-align: right;
 }
