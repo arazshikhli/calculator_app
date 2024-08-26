@@ -5,6 +5,7 @@ export const ButtonItem = ({value, setValue,valueType,type,operation,
     handleClearLastSymbol,
     setResult,
     handleClick,
+    setInputValue,
     calculateResult}) => {
         const selectFunction=()=>{
           switch (valueType) {
@@ -15,8 +16,10 @@ export const ButtonItem = ({value, setValue,valueType,type,operation,
                 calculateResult()
                 break;}
                 case 'clear':                   
-             {   setValue('')
+             {  
+               setValue('')
                   setResult('')
+                  setInputValue('')
              }
                 break;
                 case 'delLast':

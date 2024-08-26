@@ -8,18 +8,27 @@ export const LogicPage = () => {
     const [value,setValue]=useState('0');
     const [result,setResult]=useState(null)
     const [resultHistory,setResultHistory]=useState();
-    
+    const [inputValue, setInputValue] = useState('');
+   
 
     useEffect(()=>{
 //  console.log(resultHistory);
+      calculateResult()
+
  
-    },[value,result])
+    },[value,result,inputValue])
+      // // Обработчик для изменения значения input через пользовательский ввод
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value);
+  };
 
-
-    
+  // // Обработчик для изменения значения input через нажатие кнопки
+  // const handleButtonClick = (newValue) => {
+  //   setInputValue(newValue);
+  // };
+ 
   const handleClick = (val) => {
-
-
+    setInputValue(inputValue+val)
     setValue(value + val);
       const operands = value.split(/([+\-*/%])/);
 
@@ -35,7 +44,7 @@ export const LogicPage = () => {
         const operator = operands[i];
 
         const nextOperand = parseFloat(operands[i + 1]);
-  
+
         switch (operator) {
           case '+':
             calcResult += nextOperand;
@@ -55,25 +64,35 @@ export const LogicPage = () => {
                 // console.log('percent')
                 break;
                }
-
             }
 
           default:
             break;
         }
+      
+        
+      }
+
+
+    const valueArray=value.split('');
+    const lastSymbol=valueArray[valueArray.length-1];
+    const prevLastSymbol=valueArray[valueArray.length-2];
+      const isPrevLast=prevLastSymbol==='+'||prevLastSymbol==='-'||prevLastSymbol==='/'||prevLastSymbol==='*'||prevLastSymbol==='%';
+      const isLastSymb=lastSymbol==='+'||lastSymbol==='-'||lastSymbol==='/'||lastSymbol==='*'||lastSymbol==='%';
+      console.log('isPrevLast: ', isPrevLast);
+      console.log('islast: ', isLastSymb)
+      if(isLastSymb&&isPrevLast){ 
+          valueArray.splice(-2);
+          console.log('value',valueArray)
+          valueArray.push(lastSymbol);
+          console.log(valueArray)
+          setValue(valueArray.join(''))
+        
       }
 
       setResult(calcResult);
-      setValue('0');
+    
 
-        operands.push('=');
-        operands.push(calcResult.toString());
-        const newItem=operands;
-        setResultHistory(prevItems=>{
-         
-                return [...prevItems,newItem]
-         
-        })
   
     } catch (error) {
         console.log(error.message);
@@ -83,7 +102,9 @@ export const LogicPage = () => {
   };
    const handleClearLastSymbol=()=>{
     const newData=value.split('');
-    newData.pop()
+    newData.pop()  
+    setInputValue(newData.join(''))
+    console.log(inputValue);
     setValue(newData.join(''))
    }
 
@@ -92,12 +113,17 @@ export const LogicPage = () => {
     <div className={styles.content}>
         <div className={styles.divider}>
         <div className={styles.calculator}>
-        <Display value={value} result={result} setValue={setValue}/>
+        <Display 
+        handleInputChange={handleInputChange}
+        inputValue={inputValue}
+        setInputValue={setInputValue}
+        value={value} result={result} setValue={setValue}/>
         <Buttons 
         value={value} 
         setValue={setValue}
         result={result}
         setResult={setResult}
+        setInputValue={setInputValue}
         calcSymbols={calcSymbols}
         handleClick={handleClick}
         calculateResult={calculateResult}

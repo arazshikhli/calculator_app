@@ -9,7 +9,8 @@ export const Buttons=({
      calculateResult,
      handleClearLastSymbol,
      result,
-     setResult
+     setResult,
+     setInputValue
     }
 )=>{
 
@@ -19,6 +20,7 @@ export const Buttons=({
       <ul className={styles.buttonsList}>
       {
         calcSymbols.map(function(number){
+          
           return<ButtonItem key={number.index}
           setValue={setValue}
            value={number.value}
@@ -29,6 +31,7 @@ export const Buttons=({
            type={number.type}
            operation={number.operation}
            setResult={setResult}
+           setInputValue={setInputValue}
            />
         })
       }

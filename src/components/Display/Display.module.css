@@ -2,5 +2,27 @@
   color: white;
   font-size: var(--display-result-size);
   width: 100%;
-  
+  display: flex;
+  flex-direction: column;
+}
+.displayHistory{
+  flex:1;
+}
+.displayResult{
+  flex:1;
+}
+.displayInput{
+  flex:1;
+}
+.dataInput{
+  border: none;
+  min-height: 40px;
+  width: 100%;
+  border-radius: 5px;
+  font-size: var(--display-result-size);
+  color: var(--sym-btn-color);
+  display: flex;
+  align-content: flex-end;
+  background-color: var(--calc-bg);
+  text-align: right;
 }
