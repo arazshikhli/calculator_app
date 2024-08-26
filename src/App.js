@@ -1,22 +1,34 @@
 import { useState } from "react";
-import { Buttons } from "./components/Buttons/Buttons";
-import { Display } from "./components/Display/Display";
 import { LogicPage } from "./components/LogicPage/LogicPage";
 
 function App() {
 
-  const [value,setValue]=useState();
-  const [result,setResult]=useState();
+  const [inputValue, setInputValue] = useState('');
 
-  const operations={
-   value,
-   setValue,
-   result,
-   setResult
-  }
+  // Обработчик для изменения значения input через пользовательский ввод
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value);
+  };
+
+  // Обработчик для изменения значения input через нажатие кнопки
+  const handleButtonClick = (newValue) => {
+    setInputValue(newValue);
+  };
+ 
   return (
 <div>
   <LogicPage/>
+  <div>
+      <input 
+        type="text" 
+        value={inputValue} 
+        onChange={handleInputChange} 
+        placeholder="Введите текст"
+      />
+      <br />
+      <button onClick={() => handleButtonClick('Пример 1')}>Вставить "Пример 1"</button>
+      <button onClick={() => handleButtonClick('Пример 2')}>Вставить "Пример 2"</button>
+    </div>
 </div>
   );
 }

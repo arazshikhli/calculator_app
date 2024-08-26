@@ -7,7 +7,10 @@ export const Buttons=({
   setValue,calcSymbols, 
    handleClick,
      calculateResult,
-     handleClearLastSymbol}
+     handleClearLastSymbol,
+     result,
+     setResult
+    }
 )=>{
 
 
@@ -24,6 +27,8 @@ export const Buttons=({
            calculateResult={calculateResult}
            valueType={number.operation}
            type={number.type}
+           operation={number.operation}
+           setResult={setResult}
            />
         })
       }

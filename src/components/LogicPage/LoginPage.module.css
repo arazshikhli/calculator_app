@@ -6,11 +6,15 @@
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
 }
-
+.divider{
+    display: flex;
+    width: 400px;
+    flex-direction: row;
+}
 .calculator{
     width: 400px;
     height: 700px;
@@ -18,4 +22,5 @@
     border-radius: 15px;
     display: grid;
     grid-template-rows: 300px 400px;
+    flex: 1;
     }

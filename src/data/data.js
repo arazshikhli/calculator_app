@@ -61,7 +61,7 @@ export const calcSymbols=[
 },
 ,
 {
-    index:18,value:'.',type:'symbol',operation:'result'
+    index:18,value:'.',type:'symbol',operation:'standard'
 },
 {
     index:19,value:'=',type:'symbol',operation:'result'
