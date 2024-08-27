@@ -5,7 +5,7 @@ import{ calcSymbols} from '../../data/data';
 import styles from './LogicPage.module.css'
 
 export const LogicPage = () => {
-    const [value,setValue]=useState('0');
+    const [value,setValue]=useState('');
     const [result,setResult]=useState(null)
     const [resultHistory,setResultHistory]=useState([]);
     const [inputValue, setInputValue] = useState('');
@@ -33,20 +33,26 @@ export const LogicPage = () => {
 
   const calculateResult = () => {
     try {
-      const operands = value.split(/([+\-*/%])/);
+      let operands = value.split((/([+\-*/%])/) );
+ 
+      if(operands[operands.length-2]==='%'){
 
-      const percent=operands[operands.length-2];
+        const firstNumber=Number(operands[0]);
 
-      if(percent==='%'){
-        operands[operands.length-3]*=0.1
-        
+        let newPercent=Number(operands[0]*operands[operands.length-3]*0.01)
+     
+        operands.splice(operands.length-3,1,newPercent)
+
       }
 
       let calcResult = parseFloat(operands[0]);
-      
+
       for (let i = 1; i < operands.length; i += 2) {
+      
         const operator = operands[i];
+       
         const nextOperand = parseFloat(operands[i + 1]);
+
 
         switch (operator) {
           case '+':
@@ -61,18 +67,12 @@ export const LogicPage = () => {
           case '/':
             calcResult /= nextOperand;
             break;
-         
 
           default:
             break;
         }
       }
-      for(let i=0;i<operands.length;i++){
-        if(operands[i]==='%'){
-
-        }
-      }
-
+    
 
     const valueArray=inputValue.split('');
     const lastSymbol=valueArray[valueArray.length-1];
@@ -111,12 +111,9 @@ export const LogicPage = () => {
 
   const addToHistory=()=>{
     const history=[]
-   console.log(typeof(value))
-   console.log(value);
     const historyItem=value+'='+result;
     history.push(historyItem)
       refreshHistory(history)
-    console.log('resultHistory',resultHistory);
     setValue('0');
     setInputValue('')
     

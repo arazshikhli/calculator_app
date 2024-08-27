@@ -10,7 +10,7 @@ export const Display = ({
 }) => {
 
 useEffect(()=>{
-console.log(resultHistory);
+
 
 },[resultHistory])
 
