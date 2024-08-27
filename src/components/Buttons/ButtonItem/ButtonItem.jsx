@@ -6,14 +6,16 @@ export const ButtonItem = ({value, setValue,valueType,type,
     setResult,
     handleClick,
     setInputValue,
-    calculateResult}) => {
+    calculateResult,
+    addToHistory
+  }) => {
         const selectFunction=()=>{
           switch (valueType) {
             case 'standard':{
                 handleClick(value)
                 break;}
                 case 'result':{
-                calculateResult()
+                  addToHistory()
                 break;}
                 case 'clear':                   
              {  

@@ -10,7 +10,8 @@ export const Buttons=({
      handleClearLastSymbol,
      result,
      setResult,
-     setInputValue
+     setInputValue,
+     addToHistory
     }
 )=>{
 
@@ -32,6 +33,7 @@ export const Buttons=({
            operation={number.operation}
            setResult={setResult}
            setInputValue={setInputValue}
+           addToHistory={addToHistory}
            />
         })
       }

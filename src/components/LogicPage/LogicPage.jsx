@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react'
 import { Display } from '../Display/Display';
 import { Buttons } from '../Buttons/Buttons';
 import{ calcSymbols} from '../../data/data';
-import styles from './LoginPage.module.css'
+import styles from './LogicPage.module.css'
 
 export const LogicPage = () => {
     const [value,setValue]=useState('0');
     const [result,setResult]=useState(null)
-    const [resultHistory,setResultHistory]=useState();
+    const [resultHistory,setResultHistory]=useState([]);
     const [inputValue, setInputValue] = useState('');
    
 
@@ -16,9 +16,10 @@ export const LogicPage = () => {
 
  
     },[value,result,inputValue])
+
+
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
-
   };
 
   const handleClick = (val) => {
@@ -27,6 +28,7 @@ export const LogicPage = () => {
       const operands = value.split(/([+\-*/%])/);
 
   };
+
 
 
   const calculateResult = () => {
@@ -97,7 +99,29 @@ export const LogicPage = () => {
     setValue(newData.join(''))
    }
 
+ 
+  const refreshHistory=(newHistory)=>{
+    setResultHistory(prevHistory=>[...prevHistory,newHistory])
 
+   if(resultHistory.length>2){
+    resultHistory.shift()
+    setResultHistory(resultHistory)
+   }
+  }
+
+  const addToHistory=()=>{
+    const history=[]
+   console.log(typeof(value))
+   console.log(value);
+    const historyItem=value+'='+result;
+    history.push(historyItem)
+      refreshHistory(history)
+    console.log('resultHistory',resultHistory);
+    setValue('0');
+    setInputValue('')
+    
+  }
+  
   return (
     <div className={styles.content}>
         <div className={styles.divider}>
@@ -106,7 +130,12 @@ export const LogicPage = () => {
         handleInputChange={handleInputChange}
         inputValue={inputValue}
         setInputValue={setInputValue}
-        value={value} result={result} setValue={setValue}/>
+        value={value} 
+        result={result} 
+        setValue={setValue}
+        resultHistory={resultHistory}
+        setResultHistory={setResultHistory}
+        />
         <Buttons 
         value={value} 
         setValue={setValue}
@@ -117,6 +146,7 @@ export const LogicPage = () => {
         handleClick={handleClick}
         calculateResult={calculateResult}
         handleClearLastSymbol={handleClearLastSymbol}
+        addToHistory={addToHistory}
         />
        </div>
 </div>

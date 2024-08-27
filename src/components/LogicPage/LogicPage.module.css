@@ -15,14 +15,14 @@
     display: flex;
     width: 400px;
     flex-direction: row;
+    height: 90vh;
 }
 .calculator{
     width: 400px;
-    height: 700px;
     background-color: var(--calc-bg);
     border-radius: 15px;
     display: grid;
-    grid-template-rows: 300px 400px;
-    flex: 1;
-    
+
+    height: 100%;
+
     }
