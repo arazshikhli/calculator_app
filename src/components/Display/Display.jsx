@@ -27,7 +27,7 @@ useEffect(()=>{
     </div>
  </div>
  <div className={styles.displayResult}>
-    <p>{result}</p>
+  {isNaN(result)?<p>0</p>:<p>{result}</p>}
  </div>
  <div className={styles.displayInput}>
 

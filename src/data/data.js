@@ -68,3 +68,8 @@ export const calcSymbols=[
 }
 
 ]
+
+
+export const isSymbol=(operands,count)=>{
+return operands[operands.length-count]==='+'||operands[operands.length-count]==='-'||operands[operands.length-count]==='/'||operands[operands.length-count]==='*'||operands[operands.length-count]==='%'
+}
