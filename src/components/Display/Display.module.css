@@ -47,3 +47,12 @@
 .historyItem{
   margin: 0;
 }
+
+.deleteBtn{
+  background-image: url('../../assets/delete.svg');
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  background-position: center;
+  background-color: none;
+}

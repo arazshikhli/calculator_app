@@ -19,7 +19,7 @@ useEffect(()=>{
     <div className={styles.display}> 
  <div className={styles.displayHistory}>
  <div className={styles.historyItems}>
-  <button onClick={()=>setResultHistory([])}>remove</button>
+  <button className={styles.deleteBtn} onClick={()=>setResultHistory([])}></button>
   {resultHistory.map(function(history,index){
     return(  <p className={styles.historyItem} key={index}>{history}</p>)
   
