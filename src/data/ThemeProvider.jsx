@@ -8,7 +8,6 @@ export const ThemeProvider=({children})=>{
 
     const toggleTheme = () => {
         setIsDarkMode((prevMode) => !prevMode);
-        console.log("is dark mode",isDarkMode)
       };
 
     return <>
