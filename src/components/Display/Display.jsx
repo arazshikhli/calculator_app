@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import styles from './Display.module.css'
+import { ThemeContext } from '../../data/ThemeProvider'
 export const Display = ({
   result,
   inputValue,
@@ -13,9 +14,10 @@ useEffect(()=>{
 
 },[resultHistory])
 
+const {isDarkMode}=useContext(ThemeContext)
 
   return (
-    <div className={styles.display}> 
+    <div className={isDarkMode?styles.displayDark:styles.displayLight}> 
  <div className={styles.displayHistory}>
  <div className={styles.historyItems}>
   <button className={styles.deleteBtn} onClick={()=>setResultHistory([])}></button>

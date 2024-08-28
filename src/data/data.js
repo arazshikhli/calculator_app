@@ -54,7 +54,7 @@ export const calcSymbols=[
     index:15,value:'+',type:'symbol',operation:'standard'
 },
 {
-    index:16,value:'@',type:'number',operation:'standard'
+    index:16,value:'@',type:'mode',operation:'mode'
 },
 {
     index:17,value:'0',type:'number',operation:'standard'

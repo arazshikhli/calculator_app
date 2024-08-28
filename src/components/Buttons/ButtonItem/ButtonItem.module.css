@@ -16,3 +16,21 @@ color:var(--nmb-btn-color)
     background-color: var(--btn--bg-color);
     color: var(--sym-btn-color);
 }
+
+.modeBtn{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.DarkBtn{
+background-image: url('../../../assets//dark_mode.svg');
+background-repeat: no-repeat;
+background-position: center;
+
+}
+.LightBtn{
+    background-image: url('../../../assets//light_mode.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+
+}

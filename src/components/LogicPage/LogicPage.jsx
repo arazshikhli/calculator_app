@@ -1,18 +1,21 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState,useContext } from 'react'
 import { Display } from '../Display/Display';
 import { Buttons } from '../Buttons/Buttons';
 import{ calcSymbols, isSymbol} from '../../data/data';
 import styles from './LogicPage.module.css'
+import {ThemeContext}from '../../data/ThemeProvider'
 
 export const LogicPage = () => {
     const [value,setValue]=useState('');
     const [result,setResult]=useState(null)
     const [resultHistory,setResultHistory]=useState([]);
     const [inputValue, setInputValue] = useState('');
-   
+    const {isDarkMode}=useContext(ThemeContext)
+ 
     useEffect(()=>{
       calculateResult()
     },[value,result,inputValue])
+
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
@@ -106,7 +109,7 @@ export const LogicPage = () => {
   return (
     <div className={styles.content}>
         <div className={styles.divider}>
-        <div className={styles.calculator}>
+        <div className={isDarkMode?styles.calculator:styles.calculatorDark}>
         <Display 
         handleInputChange={handleInputChange}
         inputValue={inputValue}

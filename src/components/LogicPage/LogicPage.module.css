@@ -23,3 +23,12 @@
     display: grid;
     height: 100%;
     }
+
+    .calculatorDark{
+        width: 400px;
+        background-color: white;
+        border-radius: 15px;
+        display: grid;
+        height: 100%;
+        color: black;
+        }

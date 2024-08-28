@@ -1,5 +1,13 @@
-.display{
-  color: white;
+.displayDark{
+  color:white;
+  font-size: var(--display-result-size);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex:2;
+}
+.displayLight{
+  color:black;
   font-size: var(--display-result-size);
   width: 100%;
   display: flex;

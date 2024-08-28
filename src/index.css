@@ -22,6 +22,8 @@ code {
   --nmb-btn-color:white;
   --sym-btn-color:#ED8114;
   --display-result-size:30px;
+  --dark-color:white;
+  --light-color:black;
 }
 input
 {padding: 0;}

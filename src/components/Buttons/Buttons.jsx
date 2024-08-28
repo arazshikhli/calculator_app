@@ -1,7 +1,8 @@
 
 import styles from './Buttons.module.css'
 import { ButtonItem } from './ButtonItem/ButtonItem'
-
+import {ThemeContext} from '../../data/ThemeProvider'
+import { useContext } from 'react'
 
 export const Buttons=({  
   setValue,calcSymbols, 
@@ -15,7 +16,7 @@ export const Buttons=({
     }
 )=>{
 
-
+const {isDarkMode}=useContext(ThemeContext)
 
     return (
       <ul className={styles.buttonsList}>
@@ -34,6 +35,7 @@ export const Buttons=({
            setResult={setResult}
            setInputValue={setInputValue}
            addToHistory={addToHistory}
+           
            />
         })
       }

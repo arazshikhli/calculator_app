@@ -1,16 +1,15 @@
 import { useState } from "react";
 import { LogicPage } from "./components/LogicPage/LogicPage";
+import { ThemeProvider } from "./data/ThemeProvider";
 
 function App() {
-
  
 
- 
   return (
-<div>
-  <LogicPage/>
+    <ThemeProvider>
+        <LogicPage/>
+    </ThemeProvider>
 
-</div>
   );
 }
 
