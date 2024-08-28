@@ -36,9 +36,7 @@ export const LogicPage = () => {
         }
         const isLastSymbol=isSymbol(operands,1);
         const isPrevLastSymbol=isSymbol(operands,2)
-        // const isLastSymbol=operands[operands.length-1]==='+'||operands[operands.length-1]==='-'||operands[operands.length-1]==='/'||operands[operands.length-1]==='*'||operands[operands.length-1]==='%'
-        // const isPrevLastSymbol=operands[operands.length-2]==='+'||operands[operands.length-2]==='-'||operands[operands.length-2]==='/'||operands[operands.length-2]==='*'||operands[operands.length-2]==='%'
-  
+   
         const lastSymbol=operands[operands.length-1]
         if(isLastSymbol&&isPrevLastSymbol){
   
@@ -74,7 +72,6 @@ export const LogicPage = () => {
         }
       }
     
-      const valueArray=calcResult.toString();
 
       setResult(calcResult);
   
@@ -97,6 +94,7 @@ export const LogicPage = () => {
 
   const addToHistory=()=>{
     const history=[]
+    if(isNaN(result)){return}
     const historyItem=value+'='+result;
     history.push(historyItem)
       refreshHistory(history)

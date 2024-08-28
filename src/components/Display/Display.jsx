@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import styles from './Display.module.css'
-
 export const Display = ({
   result,
   inputValue,
@@ -20,9 +19,9 @@ useEffect(()=>{
  <div className={styles.displayHistory}>
  <div className={styles.historyItems}>
   <button className={styles.deleteBtn} onClick={()=>setResultHistory([])}></button>
+
   {resultHistory.map(function(history,index){
     return(  <p className={styles.historyItem} key={index}>{history}</p>)
-  
   })}
     </div>
  </div>

@@ -9,7 +9,6 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-
 }
 .divider{
     display: flex;
@@ -22,7 +21,5 @@
     background-color: var(--calc-bg);
     border-radius: 15px;
     display: grid;
-
     height: 100%;
-
     }
