@@ -17,6 +17,7 @@
 .displayHistory{
   text-align: right;
   margin-right: 5px;
+  font-size: var(--display-history-size);
   flex: 2;
 }
 .displayResult{

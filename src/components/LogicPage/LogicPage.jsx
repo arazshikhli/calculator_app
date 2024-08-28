@@ -101,6 +101,14 @@ export const LogicPage = () => {
     const historyItem=value+'='+result;
     history.push(historyItem)
       refreshHistory(history)
+      console.log(history);
+      
+      console.log(resultHistory.length)
+  if(resultHistory.length>=5){
+    resultHistory.shift();
+    setResultHistory(resultHistory)
+  }
+      
     setValue('');
     setInputValue('')
     
