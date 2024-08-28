@@ -43,7 +43,6 @@ export const ButtonItem = ({value, setValue,valueType,type,
   return (
    <button className={type==='number'?styles.numberBtn:(type==='mode'?(isDarkMode?styles.DarkBtn:styles.LightBtn):styles.symbolBtn) }
    onClick={selectFunction}
-   
    >{type==='mode'?'':<span>{value}</span>}</button>
   )
 }

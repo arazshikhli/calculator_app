@@ -10,11 +10,13 @@ button:hover{
 }
 .numberBtn{
 background-color: var(--btn--bg-color);
-color:var(--nmb-btn-color)
+color:var(--nmb-btn-color);
+margin:0 7px 0 7px;
 }
 .symbolBtn{
     background-color: var(--btn--bg-color);
     color: var(--sym-btn-color);
+    margin:0 7px 0 7px;
 }
 
 .modeBtn{
@@ -26,12 +28,14 @@ color:var(--nmb-btn-color)
 background-image: url('../../../assets//dark_mode.svg');
 background-repeat: no-repeat;
 background-position: center;
+margin:0 7px 0 7px;
 
 }
 .LightBtn{
     background-image: url('../../../assets//light_mode.svg');
     background-repeat: no-repeat;
     background-position: center;
+    margin:0 7px 0 7px;
    
 
 }

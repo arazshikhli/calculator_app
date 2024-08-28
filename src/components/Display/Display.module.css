@@ -41,6 +41,8 @@
   align-content: flex-end;
   background-color: var(--btn--bg-color);
   text-align: right;
+
+
 }
 .historyItems{
   display: flex;
@@ -65,4 +67,28 @@
 }
 .deleteBtn:hover{
   background-color: rgb(134, 17, 17);
+}
+
+.displayButtons{
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between ;
+}
+.DarkModeBtn{
+  background-image: url('../../assets/dark_mode.svg');
+  width: 60px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  margin: 1rem;
+}
+.LightModeBtn{
+  background-image: url('../../assets/dark_mode.svg');
+  width: 60px;
+  height: 40px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  margin:1rem;
 }

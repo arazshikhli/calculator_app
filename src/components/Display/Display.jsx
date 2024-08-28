@@ -20,7 +20,10 @@ const {isDarkMode}=useContext(ThemeContext)
     <div className={isDarkMode?styles.displayDark:styles.displayLight}> 
  <div className={styles.displayHistory}>
  <div className={styles.historyItems}>
-  <button className={styles.deleteBtn} onClick={()=>setResultHistory([])}></button>
+<div className={styles.displayButtons}>
+<button className={styles.deleteBtn} onClick={()=>setResultHistory([])}></button>
+<button className={styles.DarkModeBtn}></button>
+</div>
 
   {resultHistory.map(function(history,index){
     return(  <p className={styles.historyItem} key={index}>{history}</p>)
