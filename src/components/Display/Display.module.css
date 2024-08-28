@@ -61,6 +61,7 @@
   cursor: pointer;
   background-color: black;
   transition: all 0.5s;
+  margin: 1rem;
 }
 .deleteBtn:hover{
   background-color: rgb(134, 17, 17);

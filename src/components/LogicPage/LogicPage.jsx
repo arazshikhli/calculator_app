@@ -48,10 +48,7 @@ export const LogicPage = () => {
           setValue(operands.join(''))
           setInputValue(operands.join(''))         
         }
-
-
       }
-    
       let calcResult = parseFloat(operands[0]);
       for (let i = 1; i < operands.length; i += 2) {
         const operator = operands[i];
