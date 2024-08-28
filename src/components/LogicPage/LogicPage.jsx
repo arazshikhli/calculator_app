@@ -19,6 +19,7 @@ export const LogicPage = () => {
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
+
   };
 
   const handleClick = (val) => {
@@ -28,6 +29,7 @@ export const LogicPage = () => {
   const calculateResult = () => {
     try {
       let operands = value.split((/([+\-*/%])/) );
+      
       if(operands[operands.length-2]==='%'){
         let newPercent=Number(operands[0]*operands[operands.length-3]*0.01)
         operands.splice(operands.length-3,1,newPercent)
